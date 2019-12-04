@@ -29,7 +29,6 @@ var db;
 function handleDisconnect() {
     db = mysql.createConnection(db_config);
 
-    console.log("handle work Running Here");
 
     db.connect(function (err) {
         if (err) {
@@ -52,7 +51,7 @@ function handleDisconnect() {
 
 handleDisconnect();
 
-console.log("Running Here");
+
 
 // configure middleware
 app.set('port', process.env.port || port); // set express to use this port
@@ -64,6 +63,8 @@ app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
+
+console.log("Running Here");
 
 // routes for the app
 app.get('/config', getConfig);
