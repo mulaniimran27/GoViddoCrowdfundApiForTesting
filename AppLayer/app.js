@@ -62,34 +62,8 @@ app.use(function(req, res, next) {
 
 // routes for the app
 app.get('/config', getConfig);
-app.post('/register', register);
 app.post('/login', login);
-app.post('/checkWalletName', checkWalletName);
-app.post('/getVideoGenereId', getVideoGenereId);
-app.get('/bannerImages', bannerImages);
-app.post('/getVideoData', getVideoData);
-app.post('/getSliderImageData', getSliderImageData);
-app.post('/getPreviewData', getPreviewData);
-app.post('/getSubscriptionList', getSubscriptionList);
-app.get('/generateVideoOtp', generateVideoOtp);
-app.post('/getSubscriptionData', getSubscriptionData);
-app.post('/saveViewInformation', saveViewInformation);
-app.post('/likeUnlikeSstore', likeUnlikeSstore);
-app.post('/subscriptChannel', subscriptChannel);
-app.post('/getVideoRelatedDetails', getVideoRelatedDetails);
-app.post('/getChannelList', getChannelList);
-app.post('/getUserInfoForAccount', getUserInfoForAccount);
-app.post('/addComment', addComment);
-app.post('/getCommentList', getCommentList);
-app.post('/watchLaterList',watchLaterList);
-app.post('/getUserProfilePics', getUserProfilePics);
-app.post('/getUserHistory', getUserHistory);
-app.post('/addToWatchList', addToWatchList);
-app.get('/shareUrl', shareUrl);
-app.post('/sahreUrlTokens', sahreUrlTokens);
-app.get('/updateApp', updateApp);
-app.post('/transactionDetails', transactionDetails);
-app.post('/createEosMainNetWallet', createEosMainNetWallet);
+
 
 // set the app to listen on the port
 app.listen(port, () => {
