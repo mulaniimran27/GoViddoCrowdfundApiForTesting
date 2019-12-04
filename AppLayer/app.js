@@ -15,7 +15,6 @@ const { login, getConfig} = require('./routes/index');
 
 const port = config.port;
 
-console.log("port is = "+port);
 
 const db_config = {
     host: config.host,

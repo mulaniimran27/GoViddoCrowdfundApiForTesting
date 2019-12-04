@@ -9,6 +9,7 @@ module.exports = {
         // });
 
         let configQuery = "SELECT * FROM `crowd_funding_category_list` WHERE `crowd_fund_cat_status` = '1'";
+        console.log(configQuery);
 
         db.query(configQuery, function (err, result) {
             if (err) {
