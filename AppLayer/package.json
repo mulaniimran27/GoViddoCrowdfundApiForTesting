@@ -1,0 +1,30 @@
+{
+  "name": "goviddo",
+  "version": "0.0.0",
+  "description": "GoViddo Product",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GoViddo/product.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GoViddo/product/issues"
+  },
+  "homepage": "https://github.com/GoViddo/product#readme",
+  "dependencies": {
+    "eosjs-api": "^7.0.4",
+    "express": "^4.16.4",
+    "mysql": "^2.16.0",
+    "node-cmd": "^3.0.0",
+    "node-run-cmd": "^1.0.1",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {},
+  "keywords": []
+}
