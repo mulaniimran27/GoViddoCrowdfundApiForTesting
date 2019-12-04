@@ -11,10 +11,9 @@ var cors = require('cors')
 // List globals
 global.cmd = cmd
 
-const { login, getConfig} = require('./routes/index');
+const { login, createEosMainNetWallet, register, shareUrl, updateApp, watchLaterList, transactionDetails, subscriptChannel, sahreUrlTokens, addComment, addToWatchList, getUserProfilePics, getUserHistory, getCommentList, getChannelList, getUserInfoForAccount, getVideoRelatedDetails, likeUnlikeSstore, getConfig , checkWalletName, saveViewInformation, getSubscriptionData, getVideoGenereId, bannerImages, getVideoData,getSubscriptionList, getSliderImageData, getPreviewData, generateVideoOtp} = require('./routes/index');
 
 const port = config.port;
-
 
 const db_config = {
     host: config.host,
@@ -28,7 +27,6 @@ var db;
 
 function handleDisconnect() {
     db = mysql.createConnection(db_config);
-
 
     db.connect(function (err) {
         if (err) {
@@ -51,8 +49,6 @@ function handleDisconnect() {
 
 handleDisconnect();
 
-
-
 // configure middleware
 app.set('port', process.env.port || port); // set express to use this port
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -64,13 +60,8 @@ app.use(function(req, res, next) {
     next();
 });
 
-
-
 // routes for the app
 app.get('/config', getConfig);
-app.post('/login', login);
-
-console.log("Running Here");
 
 
 // set the app to listen on the port
