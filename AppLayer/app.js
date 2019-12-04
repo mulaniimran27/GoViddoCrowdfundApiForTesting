@@ -29,6 +29,8 @@ var db;
 function handleDisconnect() {
     db = mysql.createConnection(db_config);
 
+    console.log("handle work Running Here");
+
     db.connect(function (err) {
         if (err) {
             console.log('Error connecting DB:', err);
@@ -49,6 +51,8 @@ function handleDisconnect() {
 }
 
 handleDisconnect();
+
+console.log("Running Here");
 
 // configure middleware
 app.set('port', process.env.port || port); // set express to use this port
