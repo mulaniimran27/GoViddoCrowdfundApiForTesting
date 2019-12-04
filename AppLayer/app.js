@@ -64,11 +64,13 @@ app.use(function(req, res, next) {
     next();
 });
 
-console.log("Running Here");
+
 
 // routes for the app
 app.get('/config', getConfig);
 app.post('/login', login);
+
+console.log("Running Here");
 
 
 // set the app to listen on the port
