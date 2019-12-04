@@ -8,27 +8,20 @@ module.exports = {
         //     res.status(200).send(JSON.parse(data));
         // });
 
-        let configQuery = "SELECT * FROM `crowd_funding_category_list` WHERE `crowd_fund_cat_status` = '1'";
+        let configQuery = "SELECT * FROM config_table";
 
         db.query(configQuery, function (err, result) {
             if (err) {
                 return res.status(500).send(err);
             }
 
-            let data = [];
+            let data = {};
 
             for (var i = 0; i < result.length; i++) {
 
-                var details = {};
-
-                details.catname = result[i].crowd_funding_category_name;
-                details.catid = result[i].crowd_fund_cat_id;
-
-                data.push(details);
+                data[result[i].config_key] = result[i].config_value;;
 
             }
-
-            resp.data = data;
 
             return res.status(200).send(data);
         });
