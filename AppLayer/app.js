@@ -11,9 +11,11 @@ var cors = require('cors')
 // List globals
 global.cmd = cmd
 
-const { login, createEosMainNetWallet, register, shareUrl, updateApp, watchLaterList, transactionDetails, subscriptChannel, sahreUrlTokens, addComment, addToWatchList, getUserProfilePics, getUserHistory, getCommentList, getChannelList, getUserInfoForAccount, getVideoRelatedDetails, likeUnlikeSstore, getConfig , checkWalletName, saveViewInformation, getSubscriptionData, getVideoGenereId, bannerImages, getVideoData,getSubscriptionList, getSliderImageData, getPreviewData, generateVideoOtp} = require('./routes/index');
+const { login, getConfig} = require('./routes/index');
 
 const port = config.port;
+
+console.log(port);
 
 const db_config = {
     host: config.host,
