@@ -8,22 +8,32 @@ module.exports = {
         //     res.status(200).send(JSON.parse(data));
         // });
 
-        let configQuery = "SELECT * FROM config_table";
+        let configQuery = "SELECT * FROM `crowd_funding_category_list` WHERE `crowd_fund_cat_status` = '1'";
+
+        var resp = {};
+        resp.status = "success";
 
         db.query(configQuery, function (err, result) {
             if (err) {
                 return res.status(500).send(err);
             }
 
-            let data = {};
+            let data = [];
 
             for (var i = 0; i < result.length; i++) {
 
-                data[result[i].config_key] = result[i].config_value;;
+                var details = {};
+
+                details.catname = result[i].crowd_fund_cat_id;
+                details.catid = result[i].crowd_funding_category_name;
+
+                data.push(sliderDetails);
 
             }
 
-            return res.status(200).send(data);
+            resp.data = data;
+        
+            return res.status(200).send(resp);
         });
     },
 
